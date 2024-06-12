@@ -56,7 +56,7 @@ class RecipeView extends View {
           </div>
           <div class="recipe__info">
             <svg class="recipe__info-icon">
-              <use href="${icons}.svg#icon-users"></use>
+              <use href="${icons}#icon-users"></use>
             </svg>
             <span class="recipe__info-data recipe__info-data--people">${
               this._data.servings
@@ -68,14 +68,14 @@ class RecipeView extends View {
                 this._data.servings - 1
               }">
                 <svg>
-                  <use href="${icons}.svg#icon-minus-circle"></use>
+                  <use href="${icons}#icon-minus-circle"></use>
                 </svg>
               </button>
               <button class="btn--tiny btn--update-servings" data-update-to="${
                 this._data.servings + 1
               }">
                 <svg>
-                  <use href="${icons}.svg#icon-plus-circle"></use>
+                  <use href="${icons}#icon-plus-circle"></use>
                 </svg>
               </button>
             </div>
@@ -89,7 +89,7 @@ class RecipeView extends View {
 
           <button class="btn--round btn--bookmark">
             <svg class="">
-              <use href="${icons}.svg#icon-bookmark${
+              <use href="${icons}#icon-bookmark${
       this._data.bookmarked ? '-fill' : ''
     }"></use>
             </svg>
@@ -104,7 +104,7 @@ class RecipeView extends View {
               return `
             <li class="recipe__ingredient">
               <svg class="recipe__icon">
-                <use href="${icons}.svg#icon-check"></use>
+                <use href="${icons}#icon-check"></use>
               </svg>
               <div class="recipe__quantity">${this._generateMarkupIngredient(
                 ing
@@ -145,7 +145,7 @@ class RecipeView extends View {
   }
 
   _generateMarkupIngredient(ing) {
-    return ing.quantity ? new fracty(ing.quantity).toString() : '';
+    return ing.quantity ? fracty(ing.quantity).toString() : '';
   }
 }
 
